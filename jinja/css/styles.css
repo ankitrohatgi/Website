@@ -1,0 +1,73 @@
+body {
+    background-color: #7c4b00;
+    font-family: Arial, Helvetica;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#mainTable {
+    background-color: white;
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+}
+
+#mainTitle {
+    display:inline-block;
+}
+
+#mainTitleText {
+    font-size: 28px;
+    font-family: Arial;
+    color: #00343d;
+}
+
+#mainTitleSubText {
+    font-size: 14px;
+}
+
+#sidebarTD {
+    width: 250px;
+    border-left: thin grey solid;
+}
+
+#contentTD {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#footerText {
+    font-size: 80%;
+}
+
+#navigationMenu {
+    background-color: #eeeeee;
+    font-size: 90%;
+    padding: 5px;
+}
+
+#navigationMenu a {
+    text-decoration: none;
+}
+
+#navigationMenu a:hover {
+    background-color: lightgreen;
+}
+
+#donateButton {
+    display: inline-block;
+    width: 200px;
+    float:right;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.5em;
+    color: #444444;
+    margin: 0;
+    padding: 0;
+}

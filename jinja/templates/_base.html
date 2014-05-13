@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WebPlotDigitizer - Extract data from plot images or maps</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<table id="mainTable" cellpadding="10">
+<tr>
+    <td colspan="2">
+        <div id="mainTitle">
+        <table>
+        <tr>
+            <td rowspan="2"><img src="images/icon.png" height="76" width="76"/></td>
+            <td valign="bottom"><span id="mainTitleText">WebPlotDigitizer</span></td>
+        </tr>
+        <tr>
+            <td valign="top"><span id="mainTitleSubText">Extract data from plot images and maps</span></td>
+        </tr>
+        </table>
+        </div>
+        <div id="donateButton">
+        {% include "_paypal.html" %}
+        </div>
+        <div id="navigationMenu">
+            <a href="">Home</a>&nbsp;&nbsp; 
+            <a href="">Development</a>&nbsp;&nbsp;
+            <a href="">Citation</a>&nbsp;&nbsp;
+            <a href="">News</a>&nbsp;&nbsp;
+            <a href="">Tutorial</a>&nbsp;&nbsp;
+        </div>
+    </td>
+    </tr>
+<tr>
+    <td id="contentTD" valign="top">
+    {% block content %}{% endblock %}
+    </td>
+    <td id="sidebarTD" valign="top">
+        Sidebar
+    </td>
+</tr>
+<tr>
+    <td colspan="2">
+        <hr/>
+        <span id="footerText">Copyright (C), 2010 - 2014 Ankit Rohatgi</span>
+    </td>
+</tr>
+</table>
+</body>
+</html>
