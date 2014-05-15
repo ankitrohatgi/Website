@@ -1,6 +1,10 @@
 body {
-    background-color: #7c4b00;
+    /* background-color: #7c4b00; */
+    background-image: url('../images/seamless-patterns-09.jpg');
+    background-repeat: repeat;
     font-family: Arial, Helvetica;
+    font-size:14px;
+    color: #444444;
 }
 
 table {
@@ -10,12 +14,22 @@ table {
 #mainTable {
     background-color: white;
     margin: auto;
+    margin-top: 20px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 950px;
+    box-shadow: 0px 0px 25px #000000;
+}
+
+#headerTop {
+    display: inline-block;
+    width: 100%;
+    padding-top:15px;
 }
 
 #mainTitle {
     display:inline-block;
+    float:left;
+    margin-left:15px;
 }
 
 #mainTitleText {
@@ -29,8 +43,8 @@ table {
 }
 
 #sidebarTD {
-    width: 250px;
-    border-left: thin grey solid;
+    width: 220px;
+    border-left: thin #dddddd solid;
 }
 
 #contentTD {
@@ -43,31 +57,34 @@ table {
 }
 
 #navigationMenu {
-    background-color: #eeeeee;
+    background-color: #666666;
     font-size: 90%;
     padding: 5px;
+    padding-left: 15px;
 }
 
 #navigationMenu a {
     text-decoration: none;
+    color: white;
 }
 
 #navigationMenu a:hover {
-    background-color: lightgreen;
+    color: lightgreen;
 }
 
 #donateButton {
     display: inline-block;
     width: 200px;
     float:right;
-    margin-right: 20px;
     margin-top: 20px;
 }
 
 p {
-    font-size: 14px;
     line-height: 1.5em;
-    color: #444444;
     margin: 0;
     padding: 0;
+}
+
+ul > li {
+    line-height: 1.5em;
 }

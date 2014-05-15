@@ -2,25 +2,17 @@
 <html>
 <head>
 <title>WebPlotDigitizer - Extract data from plot images or maps</title>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="{{ base_dir }}css/styles.css">
 </head>
 <body>
 <table id="mainTable" cellpadding="10">
 <tr>
     <td colspan="2">
-        <div id="mainTitle">
-        <table>
-        <tr>
-            <td rowspan="2"><img src="images/icon.png" height="76" width="76"/></td>
-            <td valign="bottom"><span id="mainTitleText">WebPlotDigitizer</span></td>
-        </tr>
-        <tr>
-            <td valign="top"><span id="mainTitleSubText">Extract data from plot images and maps</span></td>
-        </tr>
-        </table>
-        </div>
-        <div id="donateButton">
-        {% include "_paypal.html" %}
+        <div id="headerTop">
+            <div id="mainTitle"><img src="{{ base_dir }}images/header.png"/></div>
+            <div id="donateButton">
+            {% include "_paypal.html" %}
+            </div>
         </div>
         <div id="navigationMenu">
             <a href="">Home</a>&nbsp;&nbsp; 
@@ -36,7 +28,13 @@
     {% block content %}{% endblock %}
     </td>
     <td id="sidebarTD" valign="top">
-        Sidebar
+        <center>
+        <a href="http://arohatgi.info/WebPlotDigitizer/app"><img src="http://arohatgi.info/WebPlotDigitizer/icons/launch.png" width="100"></a>
+<a href="https://chrome.google.com/webstore/detail/blomnnpciekdhecimpnjfcchdicopdii"><img src="http://arohatgi.info/WebPlotDigitizer/icons/chrome.png" width="100"></a>
+    </center>
+    <center>
+        <a href="http://arohatgi.info/WebPlotDigitizer/beta" target="_blank">Click here to try the latest unstable version (3.1)</a>
+    </center>
     </td>
 </tr>
 <tr>
