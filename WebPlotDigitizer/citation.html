@@ -9,7 +9,12 @@
 <tr>
     <td colspan="2">
         <div id="headerTop">
-            <div id="mainTitle"><img src="images/header.png"/></div>
+            <div id="mainTitle">
+                <table>
+                    <tr><td><span id="websiteTitle">WebPlotDigitizer</span></td></tr>
+                    <tr><td><span id="websiteSubtitle">Web based tool to extract data from plots, images and maps</span></td></tr>
+                </table>
+            </div>
             <div id="donateButton">
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -21,11 +26,11 @@
             </div>
         </div>
         <div id="navigationMenu">
-            <a href="index.html">Home</a>&nbsp;&nbsp; 
-            <a href="development.html">Development</a>&nbsp;&nbsp;
-            <a href="citation.html">Citation</a>&nbsp;&nbsp;
-            <a href="blog/index.html">News</a>&nbsp;&nbsp;
-            <a href="tutorial.html">Tutorial</a>&nbsp;&nbsp;
+            <a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; 
+            <a href="development.html">Development</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="citation.html">Citation</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="blog/index.html">News</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="tutorial.html">Tutorial</a>&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
     </td>
     </tr>
@@ -37,11 +42,12 @@
     </td>
     <td id="sidebarTD" valign="top">
         <center>
-        <a href="http://arohatgi.info/WebPlotDigitizer/app"><img src="http://arohatgi.info/WebPlotDigitizer/icons/launch.png" width="100"></a>
-<a href="https://chrome.google.com/webstore/detail/blomnnpciekdhecimpnjfcchdicopdii"><img src="http://arohatgi.info/WebPlotDigitizer/icons/chrome.png" width="100"></a>
-    </center>
-    <center>
-        <a href="http://arohatgi.info/WebPlotDigitizer/beta" target="_blank">Click here to try the latest unstable version (3.1)</a>
+        <p><form action="http://arohatgi.info/WebPlotDigitizer/app" target="_blank"><input type="submit" value="Launch App!" class="launchButton"/></form></p>
+        <p><form action="https://chrome.google.com/webstore/detail/blomnnpciekdhecimpnjfcchdicopdii" target="_blank"><input type="submit" value="Chrome App Store" class="sidebarButtons"/></form></p>
+        <p><form action="http://arohatgi.info/WebPlotDigitizer/beta" target="_blank"><input type="submit" value="Try Beta Version" class="sidebarButtons"/></form></p>
+        <p><form action="http://github.com/ankitrohatgi/WebPlotDigitizer" target="_blank"><input type="submit" value="GitHub" class="sidebarButtons"/></form></p>
+        <p>&nbsp;</p>
+        <p><a href="http://www.gnu.org/licenses/quick-guide-gplv3.html" target="_blank"><img src="images/gplv3.png" width="120"/></a></p>
     </center>
     </td>
 </tr>

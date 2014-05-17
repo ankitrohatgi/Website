@@ -1,10 +1,9 @@
 body {
-    /* background-color: #7c4b00; */
-    background-image: url('../images/seamless-patterns-09.jpg');
+    background-color: #333333;
     background-repeat: repeat;
-    font-family: Arial, Helvetica;
-    font-size:14px;
-    color: #444444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:13px;
+    color: black;
 }
 
 table {
@@ -12,18 +11,16 @@ table {
 }
 
 #mainTable {
-    background-color: white;
+    background-color: #eeeeee;
     margin: auto;
-    margin-top: 20px;
     width: 100%;
     max-width: 950px;
-    box-shadow: 0px 0px 25px #000000;
 }
 
 #headerTop {
     display: inline-block;
     width: 100%;
-    padding-top:15px;
+    padding-top:5px;
 }
 
 #mainTitle {
@@ -32,10 +29,10 @@ table {
     margin-left:15px;
 }
 
-#mainTitleText {
-    font-size: 28px;
-    font-family: Arial;
-    color: #00343d;
+#websiteTitle {
+    font-size: 42px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
 }
 
 #mainTitleSubText {
@@ -43,8 +40,7 @@ table {
 }
 
 #sidebarTD {
-    width: 220px;
-    border-left: thin #dddddd solid;
+    width: 180px;
 }
 
 #contentTD {
@@ -57,10 +53,12 @@ table {
 }
 
 #navigationMenu {
-    background-color: #666666;
-    font-size: 90%;
+    background-color: #555555;
+    font-size: 100%;
     padding: 5px;
-    padding-left: 15px;
+    padding-left: 20px;
+    margin-top: 15px;
+    
 }
 
 #navigationMenu a {
@@ -76,7 +74,8 @@ table {
     display: inline-block;
     width: 200px;
     float:right;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-right: -35px;
 }
 
 p {
@@ -117,4 +116,37 @@ hr {
 
 .pagePost p {
     margin-left: 20px;
+}
+
+.sidebarButtons {
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 90%;
+    width: 150px;
+    margin: 5px;
+    background-color: #666666;
+    border: none;
+    color: white;
+    background: linear-gradient(#666666, #444444);
+}
+
+.launchButton {
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 90%;
+    width: 150px;
+    margin: 5px;
+    background-color: #006600;
+    border: none;
+    color: white;
+    background: linear-gradient(#008800, #006600);
+
+}
+
+.sidebarButtons:hover {
+    background: linear-gradient(#888888, #444444);
+}
+
+.launchButton:hover {
+    background: linear-gradient(#00aa00, #006600);
 }
