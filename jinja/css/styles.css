@@ -88,3 +88,33 @@ p {
 ul > li {
     line-height: 1.5em;
 }
+
+.pagePost h2 {
+    margin-top: 4px;
+    margin-bottom: 2px;
+}
+
+.pagePost h2 a {
+    text-decoration: none;
+    color: #444444;
+}
+
+.smallText {
+    font-size: 80%;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #dddddd;
+}
+
+.pagePost {
+    margin-bottom:40px;
+}
+
+.pagePost p {
+    margin-left: 20px;
+}

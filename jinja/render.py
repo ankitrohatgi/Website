@@ -69,8 +69,6 @@ class Blog:
             post_file.close()
 
 
-
-
 class BlogPost:
     def __init__(self):
         self.date = "No Date"
@@ -81,14 +79,39 @@ class BlogPost:
         self.content = "<b>Blank!</b>"
 
     def getContent(self): # read html content and render?
-        pass
+        postFile = open(self.contentPath, 'r')
+        self.content = postFile.read()
+        postFile.close()
 
-def renderBlog(env):
-    blog = Blog("data/blog/", "_post.html", "_blogPage.html", "blog/")
-    blog.fetchInfo()
-    blog.renderPosts(env)
-    blog.renderPages(env)
+class Website:
+    def __init__(self):
+        self.env = Environment(loader=FileSystemLoader('templates'))
+        
+    def renderPage(self, filename):
+        print "Rendering:", filename
+        pageTemplate = self.env.get_template(filename)
+        page = pageTemplate.render()
+        pageFile = open(filename, 'w')
+        pageFile.write(page)
+        pageFile.close()
+
+    def renderSimplePages(self):
+        self.renderPage("index.html") 
+        self.renderPage("development.html") 
+        self.renderPage("citation.html") 
+        self.renderPage("tutorial.html") 
+
+    def renderBlog(self):
+        blog = Blog("data/blog/", "_post.html", "_blogPage.html", "blog/")
+        blog.fetchInfo()
+        blog.renderPosts(self.env)
+        blog.renderPages(self.env)
+
+    def render(self):
+        self.renderBlog()
+        self.renderSimplePages()
 
 if __name__ == "__main__":
-    env = Environment(loader=FileSystemLoader('templates'))
-    renderBlog(env)
+    w = Website()
+    w.render()
+
