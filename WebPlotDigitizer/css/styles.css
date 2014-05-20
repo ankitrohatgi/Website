@@ -88,6 +88,10 @@ ul > li {
     line-height: 1.5em;
 }
 
+ol > li {
+    line-height: 1.5em;
+}
+
 .pagePost h2 {
     margin-top: 4px;
     margin-bottom: 2px;
