@@ -10,5 +10,20 @@
 </div>
 {% endfor %}
 <br/>
-<p align="center">Page: 1 2 3 [Index]</p>
+
+{% if pageInfo.pageCount > 1 %}
+<p align="center">Page: 
+    {% for pi in range(1,pageInfo.pageCount+1) %}
+        {% if pi == pageInfo.pageNumber %}<b>[{% endif %}
+        {% if pi == 1 %}
+        <a href="index.html">{{ pi }}</a>
+        {% else %}
+        <a href="page{{ pi }}.html">{{ pi }}</a>
+        {% endif %}
+        {% if pi == pageInfo.pageNumber %}]</b>{% endif %}
+        &nbsp;
+    {% endfor %}
+</p>
+{% endif %}
+
 {% endblock %}

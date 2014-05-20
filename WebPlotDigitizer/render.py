@@ -1,6 +1,7 @@
 # Render website
 
 import csv
+import math
 from jinja2 import Environment, FileSystemLoader
 
 class Blog:
@@ -13,7 +14,7 @@ class Blog:
         self.outputDir = blogOutputDir
 
         # Settings
-        self.postsPerPage = 5
+        self.postsPerPage = 4
         self.baseLocationRelativeToPost = "../../"
         self.baseLocationRelativeToPage = "../"
     
@@ -31,27 +32,32 @@ class Blog:
                     self.posts.append(postInfo)
 
     def getPageCount(self):
-        return len(self.posts) / self.postsPerPage + 1
+        return int(math.ceil(len(self.posts) / (1.0*self.postsPerPage)))
 
     def renderPages(self, env):
         postCount = len(self.posts)
         pageCount = self.getPageCount()
         for pagei in range(1, pageCount+1):
+            print 'Rendering page:', pagei, 'of', pageCount
             
             postStartIndex = (pagei-1)*self.postsPerPage
-            postEndIndex = postStartIndex + self.postsPerPage
+            postEndIndex = postStartIndex + self.postsPerPage - 1
             if postEndIndex >= postCount:
                 postEndIndex = postCount - 1
 
             pagePosts = self.posts[postStartIndex:postEndIndex+1]
-            print 'Rendering page:', pagei, 'of', pageCount
+
+            blogPageInfo = BlogPageInfo()
+            blogPageInfo.pageNumber = pagei
+            blogPageInfo.pageCount = pageCount
+
             template = env.get_template(self.pageTemplateFile)
-            pageHtml = template.render(posts=pagePosts, base_dir=self.baseLocationRelativeToPage)
+            pageHtml = template.render(posts=pagePosts, pageInfo=blogPageInfo, base_dir=self.baseLocationRelativeToPage)
             fileName = ''
             if pagei == 1:
                 fileName = self.outputDir + 'index.html'
             else:
-                fileName = self.outputDir + 'page' + pagei + '.html'
+                fileName = self.outputDir + 'page' + str(pagei) + '.html'
             page_file = open(fileName, 'w')
             page_file.write(pageHtml)
             page_file.close()
@@ -82,6 +88,11 @@ class BlogPost:
         postFile = open(self.contentPath, 'r')
         self.content = postFile.read()
         postFile.close()
+
+class BlogPageInfo:
+    def __init__(self):
+        self.pageCount = 1
+        self.pageNumber = 1
 
 class Website:
     def __init__(self):
