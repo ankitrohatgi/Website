@@ -94,7 +94,7 @@ ol > li {
 
 .pagePost h2 {
     margin-top: 4px;
-    margin-bottom: 2px;
+    margin-left: 10px;
 }
 
 .pagePost h2 a {
@@ -103,7 +103,7 @@ ol > li {
 }
 
 .smallText {
-    font-size: 80%;
+    font-size: 90%;
     margin: 0;
     padding: 0;
 }
