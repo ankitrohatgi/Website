@@ -2,19 +2,20 @@
 
 import csv
 import math
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, Template
 
 class Blog:
-    def __init__(self, postDataDir, postTemplate, blogPageTemplate, blogOutputDir):
+    def __init__(self, postDataDir, postTemplate, blogPageTemplate, feedTemplate, blogOutputDir):
         self.posts = []
         self.postDataDir = postDataDir
         self.postDatabase = postDataDir + 'posts.csv'
         self.postTemplateFile = postTemplate
         self.pageTemplateFile = blogPageTemplate
+        self.feedTemplate = feedTemplate
         self.outputDir = blogOutputDir
 
         # Settings
-        self.postsPerPage = 4
+        self.postsPerPage = 3
         self.baseLocationRelativeToPost = "../../"
         self.baseLocationRelativeToPage = "../"
     
@@ -28,7 +29,6 @@ class Blog:
                     postInfo.title = row[1]
                     postInfo.contentPath = self.postDataDir + row[2]
                     postInfo.fileName = row[2]
-                    postInfo.getContent()
                     self.posts.append(postInfo)
 
     def getPageCount(self):
@@ -46,6 +46,9 @@ class Blog:
                 postEndIndex = postCount - 1
 
             pagePosts = self.posts[postStartIndex:postEndIndex+1]
+
+            for post in pagePosts:
+                post.getContent(env, self.baseLocationRelativeToPage)
 
             blogPageInfo = BlogPageInfo()
             blogPageInfo.pageNumber = pagei
@@ -69,11 +72,27 @@ class Blog:
         for blogPost in self.posts:
             print 'Rendering post:', blogPost.title
             template = env.get_template(self.postTemplateFile)
+            blogPost.getContent(env, self.baseLocationRelativeToPost)
             pageHtml = template.render(post=blogPost, base_dir=self.baseLocationRelativeToPost)
             post_file = open(self.outputDir + 'posts/' + blogPost.fileName, 'w')
             post_file.write(pageHtml)
             post_file.close()
+            blogPost.clearContent()
 
+    def renderRSS(self, env):
+        if len(self.posts) == 0:
+            return
+
+        print("Rendering RSS feed")
+
+        for post in self.posts:
+            post.getContent(env, "http://arohatgi.info/WebPlotDigitizer/")
+
+        template = env.get_template(self.feedTemplate)
+        pageHtml = template.render(posts=self.posts, base_dir="http://arohatgi/info/WebPlotDigitizer/")
+        rss_file = open(self.outputDir + 'WebPlotDigitizer.rss', 'w')
+        rss_file.write(pageHtml)
+        rss_file.close()
 
 class BlogPost:
     def __init__(self):
@@ -84,10 +103,14 @@ class BlogPost:
         self.fileName = "NoPage.html"
         self.content = "<b>Blank!</b>"
 
-    def getContent(self): # read html content and render?
+    def getContent(self, env, baseDir): # read html content and render?
         postFile = open(self.contentPath, 'r')
-        self.content = postFile.read()
+        template = Template(postFile.read())
+        self.content = template.render(base_dir=baseDir)
         postFile.close()
+
+    def clearContent(self):
+        self.content = ""
 
 class BlogPageInfo:
     def __init__(self):
@@ -113,10 +136,11 @@ class Website:
         self.renderPage("tutorial.html") 
 
     def renderBlog(self):
-        blog = Blog("data/blog/", "_post.html", "_blogPage.html", "blog/")
+        blog = Blog("data/blog/", "_post.html", "_blogPage.html", "_newsFeed.rss", "blog/")
         blog.fetchInfo()
         blog.renderPosts(self.env)
         blog.renderPages(self.env)
+        blog.renderRSS(self.env)
 
     def render(self):
         self.renderBlog()
