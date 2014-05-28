@@ -89,7 +89,7 @@ class Blog:
             post.getContent(env, "http://arohatgi.info/WebPlotDigitizer/")
 
         template = env.get_template(self.feedTemplate)
-        pageHtml = template.render(posts=self.posts, base_dir="http://arohatgi/info/WebPlotDigitizer/")
+        pageHtml = template.render(posts=self.posts, base_dir="http://arohatgi.info/WebPlotDigitizer/")
         rss_file = open(self.outputDir + 'WebPlotDigitizer.rss', 'w')
         rss_file.write(pageHtml)
         rss_file.close()
