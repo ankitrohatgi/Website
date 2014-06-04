@@ -1,0 +1,28 @@
+<!-- Blob Detection in Version 3.3 Beta -->
+
+<p>
+A simple blob detection algorithm has just been added to Version 3.3 (beta). This algorithm can be used to compute centroid location, area and one of the image moments of contiguous objects in images. I have found this algorithm to be very handy for many image processing problems and I think it makes a useful addition to this software. The current implementation is an improved version of the algorithm that I had in Version 2.x which only computed the centroid locations.
+</p>
+<br/>
+<p>
+As an example, consider an image with multiple shapes as shown below. It is often necessary to detemine the location of centers and areas of the various shapes in such an image. Often, we also want to distinguish between different shapes that might just be rotated (e.g. see alphabet 'A' in the image).
+</p>
+<br/>
+<center>
+<img src="{{ base_dir }}blog/images/blobs_with_centroids.png" height="200"/>
+</center>
+<br/>
+<p>
+With this new blob detection algorithm, we can simply choose "Background" mode for color extraction and we get a table of centroids, areas and moments. The moment is the simplest rotation invariant <a href="http://en.wikipedia.org/wiki/Image_moment#Rotation_invariant_moments" target="_blank">Image Moment (I<sub>1</sub>)</a>. By comparing the area and the moment for each detection, different shapes can be identified irrespective of their rotation.
+</p> 
+<br/>
+<center>
+<img src="{{ base_dir }}blog/images/blob_data.png" height="300"/>
+</center>
+<br/>
+<p>
+This is, however, a very simple algorithm. This may not work very well with noisy images where the objects may not be easily distingishable from the background. Also overlapping shapes will result in confusion. Some pre-processing in an image editing sofware such as <a href="http://www.gimp.org" target="_blank">GIMP</a> might help in some cases.
+</p>
+<br/>
+<p>Also note that the centroid positions are calibrated to the chosen axes. The area is in square pixels for all images other than maps. The moment is always calculated in square pixels (for now at least).
+</p>
