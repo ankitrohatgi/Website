@@ -8,6 +8,7 @@
     <item>
         <title>{{ post.title }}</title>
         <link>{{ base_dir }}blog/posts/{{ post.fileName }}</link>
+        <pubDate>{{ post.rssDate }}</pubDate>
         <description><![CDATA[{{ post.content }}]]></description>
     </item>
     {% endfor %}

@@ -3,6 +3,7 @@
 import csv
 import math
 from jinja2 import Environment, FileSystemLoader, Template
+import time
 
 class Blog:
     def __init__(self, postDataDir, postTemplate, blogPageTemplate, feedTemplate, blogOutputDir):
@@ -72,6 +73,8 @@ class Blog:
         for blogPost in self.posts:
             print 'Rendering post:', blogPost.title
             template = env.get_template(self.postTemplateFile)
+            convDate = time.strptime(blogPost.date, "%B %d, %Y")
+            blogPost.rssDate = time.strftime("%a, %d %b %Y %H:%M:%S +0000", convDate)
             blogPost.getContent(env, self.baseLocationRelativeToPost)
             pageHtml = template.render(post=blogPost, base_dir=self.baseLocationRelativeToPost)
             post_file = open(self.outputDir + 'posts/' + blogPost.fileName, 'w')
@@ -102,6 +105,7 @@ class BlogPost:
         self.contentPath = "NoPage.html"
         self.fileName = "NoPage.html"
         self.content = "<b>Blank!</b>"
+        self.rssDate = ""
 
     def getContent(self, env, baseDir): # read html content and render?
         postFile = open(self.contentPath, 'r')
