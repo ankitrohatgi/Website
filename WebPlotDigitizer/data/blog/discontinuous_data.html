@@ -1,0 +1,21 @@
+<!-- Interpolate between dashed lines and data points -->
+
+<p>
+Thanks to <a href="http://numericjs.com" target="_blank">Numeric.js</a>, WebPlotDigitizer can now perform cubic spline interpolations between detected data points (3.3 beta). With this new capability, we can now extract data at definite X-values from XY plots with dashed or dotted lines. This can also be used to interpolate between data points or even smoothen noise in the data.
+</p>
+<br/>
+<center>
+<p><img src="{{ base_dir }}blog/images/dashed_lines.png"/> <img src="{{ base_dir }}blog/images/dashed_lines_digitized.png"/></p>
+</center>
+<br/>
+<p>A new algorithm called <b>"X Step w/ Interp."</b> has been added into the Version 3.3 beta alongside the existing X Step and Averaging Window algorithms for data extraction. The "Width" parameter controls the degree of smoothing for the algorithm. The images below show the effect of changing the Width parameter from 0.1 to 2</p>
+
+<br/>
+<center>
+<p><img src="{{ base_dir }}blog/images/noisy_data.png"/> <img src="{{ base_dir }}blog/images/noisy_data_interp1.png"/></p>
+<p><img src="{{ base_dir }}blog/images/noisy_data_interp2.png"/> <img src="{{ base_dir }}blog/images/noisy_data_interp3.png"/></p>
+</center>
+
+<br/>
+<p>This new algorithm works a lot better than the current X-Step algorithm and so this might completely replace the existing algorithm in the app. Also, with this addition, I am considering wrapping up version 3.3 features and focus on updating the user manual and tutorial videos.</p>
+
