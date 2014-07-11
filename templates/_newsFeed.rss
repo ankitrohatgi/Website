@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
-    <title>WebPlotDigitizer</title>
-    <link>http://arohatgi.info/WebPlotDigitizer</link>
-    <description>Web based tool to extract numerical data from plots, images and maps</description>
+    <title>Ankit Rohatgi</title>
+    <link>http://arohatgi.info</link>
+    <description>Ankit Rohatgi's Blog</description>
     {% for post in posts %}
     <item>
         <title>{{ post.title }}</title>
