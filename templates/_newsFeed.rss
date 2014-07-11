@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+    <title>WebPlotDigitizer</title>
+    <link>http://arohatgi.info/WebPlotDigitizer</link>
+    <description>Web based tool to extract numerical data from plots, images and maps</description>
+    {% for post in posts %}
+    <item>
+        <title>{{ post.title }}</title>
+        <link>{{ base_dir }}blog/posts/{{ post.fileName }}</link>
+        <pubDate>{{ post.rssDate }}</pubDate>
+        <description><![CDATA[{{ post.content }}]]></description>
+    </item>
+    {% endfor %}
+</channel>
+</rss>
