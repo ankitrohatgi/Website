@@ -1,4 +1,4 @@
-<p>A number of new features have been added to the <a href="http://arohatgi.info/WebPlotDigitizer/beta">beta version</a>. Once these are tested out thoroughly, I will move these to the stable version. Here's a short description of these new features. Please try these out if you can:</p>
+<p>A number of new features have just been added to the <a href="http://arohatgi.info/WebPlotDigitizer/beta">beta version</a>. Once these are tested out thoroughly, I will move these to the stable version. Here's a short description of these new features. Please try these out if you can:</p>
 <br/>
 <p><b>Save and Resume work using JSON files</b></p>
 <p>For many sets of plots, axes calibration may remain the same or sometimes we just want to edit a few data points after using the data. Until now, there was no easy way to save the work to a file and re-use the information in another plot or just resume the digitization process once the application was closed. Now, users can save work by exporting data to a JSON file that can be downloaded. This file contains the axes calibration settings and the data points marked on the plot. In the future, this may be extended to contain the image file and auto-extraction algorithm settings. To use this feature, just click on the new menu options in the File menu and follow the instructions:</p>
@@ -21,11 +21,12 @@
 </p>
 <br/>
 <p><b>Transformation Equations</b></p>
-<p>Based on the axes calibration, WebPlotDigitizer constructs a mapping from the image pixels to the data values. Users can now view these expressions by clicking the 'Transformation Equations' item in the 'Axes' menu. This will display a set of equations as shown below. These can be used in multiple ways. For example, if you want to draw shapes over the image, you can map the data coordinates to pixels that can be used by your graphics software/code.</p>
+<p>Based on the axes calibration, WebPlotDigitizer constructs a mapping from the image pixels to the data values. Users can now view these relationships by clicking the 'Transformation Equations' item in the 'Axes' menu. This will display a set of equations as shown below. These can be used in multiple ways. For example, if you want to draw shapes over the image, you can map the data coordinates to pixels that can be used by your graphics software/code.</p>
 <br/>
 <p align="center"><img src="{{ base_dir }}/blog/images/wpd_trans_eqns_2.png"/></p>
 <br/>
 <p><b>Other small improvements</b></p>
-<p>Many other smaller improvements have also been made. WebKit based browsers like Chrome and Safari have a bug that was limiting the size of the CSV file generated for download. There is a workaround for that issue has been added in the software. A few performance and stabilityt improvements have also been made. Lastly, a button to quickly erase the entire mask has been added next to the stroke size control of the 'Erase' tool.</p>
+<p>Many other smaller improvements have also been made. WebKit based browsers like Chrome and Safari have a bug that was limiting the size of the CSV file generated for download. A workaround for that issue has been added in the software. A few performance and stability improvements have also been made. Lastly, a button to quickly erase the entire mask has been added next to the stroke size control of the 'Erase' tool.</p>
 <br/>
 <p align="center"><img src="{{ base_dir }}/blog/images/wpd_erase_mask.png"/></p>
+<p>Stay tuned for more!</p>
