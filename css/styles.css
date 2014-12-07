@@ -1,8 +1,8 @@
 body {
-    background-color: #ffffff;
-    background-repeat: repeat;
-    font-family: Georgia, Arial, Helvetica, sans-serif;
-    font-size:14px;
+    /* background-color: #222222; */
+    background-color: black;
+    font-family: Helvetica, sans-serif;
+    font-size:15px;
     color: black;
 }
 
@@ -14,11 +14,18 @@ img {
     border: none;
 }
 
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:32pt;
+    color: #ffffaa;
+    font-weight: normal;
+}
+
 #mainTable {
-    background-color: #ffffff;
     margin: auto;
     width: 100%;
     max-width: 950px;
+    margin-top:20px;
 }
 
 #headerTop {
@@ -33,50 +40,44 @@ img {
     margin-left:15px;
 }
 
-#websiteTitle {
-    font-size: 38px;
-    color: #333333;
-}
-
-.websiteSubtitle {
-    font-size: 0.9em;
-    color: #333333;
-}
-
-#mainTitleSubText {
-    font-size: 14px;
-}
-
 #sidebarTD {
     width: 180px;
-    border-left: thin #444444 solid;
+    font-size:18pt;
+    line-height:0.5em;
+}
+
+#sidebarTD a {
+    text-decoration: none;
+    color: #ffffaa;
+}
+
+#sidebarTD a:hover {
+    color: lime;
 }
 
 #contentTD {
     padding-left: 25px;
     padding-right: 25px;
+    background: linear-gradient(to bottom right, #ffffee, #ffffdd);
+    border-radius: 10px;
 }
 
 #footerText {
     font-size: 80%;
+    color: #cccccc;
 }
 
 #navigationMenu {
-    background-color: #555555;
-    font-size: 100%;
-    padding: 5px;
-    padding-left: 20px;
-    margin-top: 15px;
-    
+    font-size: 18pt;
 }
 
 #navigationMenu a {
     text-decoration: none;
-    color: white;
+    color: orange;
 }
 
 #navigationMenu a:hover {
-    color: lightgreen;
+    color: lime;
 }
 
 #donateButton {
@@ -88,7 +89,7 @@ img {
 }
 
 p {
-    line-height: 1.5em;
+    line-height: 1.8em;
     margin: 0;
     padding: 0;
 }
@@ -108,7 +109,7 @@ ol > li {
 
 .pagePost h2 a {
     text-decoration: none;
-    color: #444444;
+    color: #333333;
 }
 
 .pagePost img {
@@ -125,7 +126,7 @@ ol > li {
 hr {
     border: none;
     height: 1px;
-    background-color: #dddddd;
+    background-color: #888888;
 }
 
 .pagePost {
@@ -136,36 +137,3 @@ hr {
     margin-left: 20px;
 }
 
-.sidebarButtons {
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 90%;
-    width: 150px;
-    margin: 5px;
-    background-color: #666666;
-    border: none;
-    color: white;
-    background: linear-gradient(#666666, #444444);
-}
-
-.launchButton {
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 100%;
-    font-weight: bold;
-    width: 150px;
-    margin: 5px;
-    background-color: #006600;
-    border: none;
-    color: white;
-    background: linear-gradient(#008800, #006600);
-
-}
-
-.sidebarButtons:hover {
-    background: linear-gradient(#888888, #444444);
-}
-
-.launchButton:hover {
-    background: linear-gradient(#00aa00, #006600);
-}

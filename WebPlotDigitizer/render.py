@@ -138,6 +138,7 @@ class Website:
         self.renderPage("development.html") 
         self.renderPage("citation.html") 
         self.renderPage("tutorial.html") 
+        self.renderPage("download.html") 
 
     def renderBlog(self):
         blog = Blog("data/blog/", "_post.html", "_blogPage.html", "_newsFeed.rss", "blog/")
