@@ -19,6 +19,7 @@ h1 {
     font-size:32pt;
     color: #ffffaa;
     font-weight: normal;
+    margin: 0 0 10px 0;
 }
 
 #mainTable {
@@ -58,7 +59,7 @@ h1 {
 #contentTD {
     padding-left: 25px;
     padding-right: 25px;
-    background: linear-gradient(to bottom right, #ffffee, #ffffdd);
+    background: #fff;
     border-radius: 10px;
 }
 

@@ -1,8 +1,8 @@
 body {
-    background-color: #444;
+    background-color: #fff;
     background-repeat: repeat;
     font-family: Arial, Helvetica, sans-serif;
-    font-size:14px;
+    font-size:15px;
     color: black;
 }
 
@@ -19,7 +19,6 @@ img {
     margin: auto;
     width: 100%;
     max-width: 1000px;
-    border: thin #cccccc solid;
 }
 
 #headerTop {
@@ -34,10 +33,16 @@ img {
     margin-left:15px;
 }
 
-#websiteTitle {
+#websiteTitle a {
     font-size: 38px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #333333;
+    color: #1f3266;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+h2 {
+    color: #1f3266;
 }
 
 #mainTitleSubText {
@@ -58,12 +63,12 @@ img {
 }
 
 #navigationMenu {
-    background-color: #555555;
+    background-color: #1f3266;
     font-size: 100%;
     padding: 5px;
     padding-left: 20px;
     margin-top: 15px;
-    
+    border-radius: 5px;
 }
 
 #navigationMenu a {
@@ -72,7 +77,7 @@ img {
 }
 
 #navigationMenu a:hover {
-    color: lightgreen;
+    color: cyan;
 }
 
 #donateButton {
@@ -104,7 +109,7 @@ ol > li {
 
 .pagePost h2 a {
     text-decoration: none;
-    color: #444444;
+    color: #aa5555;
 }
 
 .pagePost img {
@@ -133,35 +138,33 @@ hr {
 }
 
 .sidebarButtons {
-    border-radius: 6px;
+    border-radius: 3px;
     padding: 10px;
     font-size: 90%;
     width: 150px;
     margin: 5px;
-    background-color: #666666;
+    background-color: #444444;
     border: none;
     color: white;
-    background: linear-gradient(#666666, #444444);
 }
 
 .launchButton {
-    border-radius: 6px;
+    border-radius: 3px;
     padding: 10px;
-    font-size: 100%;
-    font-weight: bold;
+    font-size: 1.1em;
     width: 150px;
     margin: 5px;
-    background-color: #006600;
+    background-color: #008800;
     border: none;
     color: white;
-    background: linear-gradient(#008800, #006600);
-
 }
 
 .sidebarButtons:hover {
-    background: linear-gradient(#888888, #444444);
+    background-color: #777777;
+    box-shadow: 0 0 4px yellow;
 }
 
 .launchButton:hover {
-    background: linear-gradient(#00aa00, #006600);
+    background-color: #00aa00;
+    box-shadow: 0 0 4px yellow;
 }
