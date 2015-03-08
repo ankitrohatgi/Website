@@ -9,27 +9,35 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-    <!-- Angular JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 </head>
-<body ng-app>
+<body>
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Ankit Rohatgi</a>
+            <button data-target="#mainNavCollapse" data-toggle="collapse" class="navbar-toggle"/>
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
-        <div>
+        <div id="mainNavCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Programming</a></li>
-                <li><a href="#">Research</a></li>
-                <li><a href="#">Photography</a></li>
+                <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Programming</a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="http://github.com/ankitrohatgi">GitHub</a></li>
+                        <li><a href="http://arohatgi.info/WebPlotDigitizer">WebPlotDigitizer</a></li>
+                    </ul>
+                </li>
+                <li><a href="http://etd.nd.edu/ETD-db/theses/available/etd-07172012-141644/unrestricted/RohatgiA072012D.pdf">Research</a></li>
+                <li><a href="https://www.flickr.com/photos/ankitrohatgi/"><span class="glyphicon glyphicon-camera"></span> Photography</a></li>
             </ul>
         </div>
     </div>
@@ -51,29 +59,30 @@
     </div>
     <div class="row">
         <div class="col-md-2">
-            <h3>Connect</h3>
-            <ul class="list-unstyled">
-                <li><a href="">LinkedIn</a></li>
-                <li><a href="">Twitter</a></li>
-                <li><a href="">Google+</a></li>
-                <li><a href="">E-mail</a></li>
+            <ul class="list-group">
+                <li class="list-group-item"><span class="glyphicon glyphicon-envelope"></span> <b>Connect</b></li>
+                <li class="list-group-item"><a href="http://www.linkedin.com/in/rohatgi">LinkedIn</a></li>
+                <li class="list-group-item"><a href="https://twitter.com/ankit_rohatgi">Twitter</a></li>
+                <li class="list-group-item"><a href="mailto:ankitrohatgi@hotmail.com">E-Mail</a></li>
+                <li class="list-group-item"><span class="glyphicon glyphicon-link"></span> <b>Quick Links</b></li>
+                <li class="list-group-item"><a href="http://arohatgi.info/WebPlotDigitizer">WebPlotDigitizer</a></li>
+                <li class="list-group-item"><a href="http://github.com/ankitrohatgi">GitHub</a></li>
+                <li class="list-group-item"><a href="https://www.flickr.com/photos/ankitrohatgi/">Flickr</a></li>
+                <li class="list-group-item"><a href="http://etd.nd.edu/ETD-db/theses/available/etd-07172012-141644/unrestricted/RohatgiA072012D.pdf">Ph.D. Thesis</a></li>
             </ul>
         </div>
-        <div class="col-md-2">
-            <h3>My Links</h3>
-            <ul class="list-unstyled">
-                <li><a href="http://arohatgi.info/WebPlotDigitizer">WebPlotDigitizer</a></li>
-                <li><a href="http://github.com/ankitrohatgi">GitHub</a></li>
-                <li><a href="">Flickr</a></li>
-                <li><a href="">Ph.D. Thesis</a></li>
-            </ul>
-        </div>
-
-        <div class="col-md-8">
+        <div class="col-md-10">
             <h3>About Me</h3>
-            <p>I am working in Austin, Texas as a software developer at ANSYS Inc. I work in a globally distributed team in developing the leading engineering simulation and design software.</p>
+            <p>I have been working in Austin, Texas as a Software Developer at ANSYS since 2012. I am a part of a globally distributed team involved in the design, development and testing of some of the industry leading engineering simulation softwares such as ANSYS <a href="http://www.ansys.com/Products/Simulation+Technology/Structural+Analysis/ANSYS+Mechanical">Mechanical</a>, <a href="http://www.ansys.com/Products/Workflow+Technology/ANSYS+Workbench+Platform">Workbench</a> and <a href="http://www.ansys.com/Products/Simulation+Technology/Multiphysics/Multiphysics+Enabled+Products/ANSYS+AIM">AIM</a>.</p>
+            <p>My work involves GUI development, software architecture and implementing numerical techniques related to structural analysis using <a href="http://en.wikipedia.org/wiki/Finite_element_method">Finite Element Methods (FEM)</a>. I work with a diverse set of programming tools and languages such as C++ or Fortran based computational code, C# based software framework, Web based HTML5 frontends and Python scripts for product testing.</p>
+            <p>I completed my Ph.D. in Chemical Engineering from the University of Notre Dame in 2012 where I studied particle and fluid interactions in multiphase flows at low Reynolds numbers. My work involved the use of many analytical and computational methods to solve fluid flow equations to understand the effects of various factors such as flow field reflection in confinement, inertia and particle morphology on the diffusion of particles and fluid in flow. I also verified my theoretical results by means of particle tracking velocimetry based experiments which involved developing image processing codes in Matlab and the use of many laboratory tools and techniques such as microfluidic device fabrication.</p>
+            <p>I love learning new programming tools and languages and solving engineering problems. I also enjoy tinkering with machines ranging from minor car repairs, rebuilding bicycles, to simple electrical circuits. Among outdoor activities, I enjoy cycling, snorkelling, hiking and camping.</p>
+            </p>
+            <p>I am also the author of <a href="http://arohatgi.info/WebPlotDigitizer">WebPlotDigitizer</a>, which is an opensource tool for extracting data from images of plots, maps etc. It is used by thousands across the world and has been <a href="https://scholar.google.com/scholar?q=WebPlotDigitizer">citied in many published research articles</a>.</p>
         </div>
     </div>
+    <hr class="divider">
+    <p>Copyright (C) 2015, Ankit Rohatgi - All Rights Reserved. Ankit Rohatgi &lt;ankitrohatgi@hotmail.com&gt;</p>
 </div>
 </body>
 </html>
