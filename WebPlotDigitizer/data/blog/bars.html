@@ -1,0 +1,60 @@
+<p>The next release of WebPlotDigitizer is around the corner and there is an exciting new addition this time: We will finally have dedicated tools to extract data from bar charts and histograms! I am still doing some final checks before the release, but you can try it out with the beta version that is available here:</p>
+<p align="center"><a href="http://arohatgi.info/WebPlotDigitizer/beta" target="_blank">http://arohatgi.info/WebPlotDigitizer/beta</a></p>
+<br/>
+<p><b>Bar Charts vs. Histograms</b></p>
+<br/>
+<p>Most bar charts have a continuous axis along the data, but only a discrete set of labels that correspond to each bar on the other axis. Keeping this in mind, a completely new plot type and an extraction algorithm has been added for bar charts. For the charts where both the axes are continuous (e.g. histograms), you can still use the 2D (X-Y) plot type, but a new algorithm is now available to help with bar charts. I will first describe the extraction process for simple bar charts followed by the process for histograms.</p>
+<br/>
+<p><b>Bar Charts</b></p>
+<br/>
+<p>Just select the "2D Bar Plot" option after loading the image. You will be prompted to select two points on the axis that is along the bars. For horizontal bar charts, pick the two points on the X-axis.</p>
+<br/>
+<center>
+    <a href="{{ base_dir }}blog/images/bar_1.png" target="_blank"><img src="{{ base_dir }}blog/images/bar_1_scaled.png"/></a>
+    <a href="{{ base_dir }}blog/images/bar_2.png" target="_blank"><img src="{{ base_dir }}blog/images/bar_2_scaled.png"/></a>
+</center>
+<br/>
+<p>After picking two points on the axis, specify the values at those two points. Select the "Log Scale" option if the data is in log-scale.</p>
+<br/>
+<center>
+    <a href="{{ base_dir }}blog/images/bar_3.png" target="_blank"><img src="{{ base_dir }}blog/images/bar_3_scaled.png"/></a>
+</center>
+<br/>
+<p>You can manually click to specify data, or if you want to do automatic extraction, then do the color selection part just as you would for any other plot type in WebPlotDigitizer. (If you are unfamiliar with WebPlotDigitizer, then please refer to the <a href="http://arohatgi.info/WebPlotDigitizer/tutorial.html">tutorials section</a>)</p>
+<br/>
+<center>
+    <a href="{{ base_dir }}blog/images/bar_4.png" target="_blank"><img src="{{ base_dir }}blog/images/bar_4_scaled.png"/></a>
+</center>
+<br/>
+<p>The auto-extraction algorithm options are now context sensitive and so you will see only one extraction algorithm called "Bar Extraction". Adjust the two parameters (delta_X or delta_Y and delta_Val) until you see that only one point is detected per bar. With some images, the algorithm will not be able to make an accurate detection even upon adjustments and you might have to make small modifications in the manual mode later.</p>
+<br/>
+<center>
+    <a href="{{ base_dir }}blog/images/bar_5.png" target="_blank"><img src="{{ base_dir }}blog/images/bar_5_scaled.png"/></a>
+</center>
+<br/>
+<p>Once you have the data points, you might want to change the labels assigned to each data point (Bar0, Bar1, etc.). Just switch to manual mode and select the "Edit Labels" tool and click on the data point you wish to change the label for. This may get a little repetitive for a large number of data points, so you might want to do this later in your data analysis tool.</p>
+<br/>
+<center>
+    <a href="{{ base_dir }}blog/images/bar_6.png" target="_blank"><img src="{{ base_dir }}blog/images/bar_6_scaled.png"/></a>
+</center>
+<br/>
+<p>Finally, just click "View Data" to view and export data points to a CSV file or Plotly. You can also export data to a JSON file from the File menu.</p>
+<br/>
+<p><b>Histograms</b></p>
+<br/>
+<p>While most bar charts can be digitized using the above method, it might be too tedious to work with bar charts where both axis are continuous and the "labels" for each bar is just a value on an axis. For these charts, you can just select 2D (X-Y) plot type at the start and calibrate the axis as you would for any other 2D X-Y plot in WebPlotDigitizer.</p>
+<br/>
+<center>
+    <a href="{{ base_dir }}blog/images/bar_7.png" target="_blank"><img src="{{ base_dir }}blog/images/bar_7_scaled.png"/></a>
+</center>
+<br/>
+<p>The manual work should work just like it does for any other XY plot, but in the automatic mode, you will now have a new algorithm called "Histograms". This works almost exactly like the algorithm for bar charts above and you can simply adjust the two parameters until you get the desired results like you would in the above case. There are no labels for each data point to edit in this case.</p>
+<br/>
+<center>
+    <a href="{{ base_dir }}blog/images/bar_8.png" target="_blank"><img src="{{ base_dir }}blog/images/bar_8_scaled.png"/></a>
+</center>
+<br/>
+<p>Finally, just click "View Data" to view or export the extracted data.</p>
+<br/>
+<p>This is just a first implementation for bar charts and you can expect these features and algorithms to be refined over time. Suggestions for improvements are quite welcome!</p> 
+
