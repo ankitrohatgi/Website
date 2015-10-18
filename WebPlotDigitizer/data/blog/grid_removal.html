@@ -1,16 +1,37 @@
+<p>Version 3.9 has been released with a few new additions and improvements. For a summary of new features, please refer to the <a href="http://arohatgi.info/WebPlotDigitizer/app/release_notes.txt">latest release notes</a>.</p>
 
+<br/>
+
+<p>The most significant one is the addition of a grid removal tool which should help eliminate the interfering grid lines that prevent the autodetection algorithms to work very well for certain plots. This initial implementation of the grid removal tool works with any grid line or background colors. You can remove horizontal and/or vertical lines as needed. The current implementation does not work with skewed or rotated plots, but that can be added in the future if it is useful.</p>
+
+<br/>
+
+<p>To switch to the grid removal mode, select the <b>Remove Grid</b> menu option under the <b>Axes</b> menu as shown below:</p>
+<br/>
 <center>
     <a href="{{ base_dir }}blog/images/grid_0.png" target="_blank"><img src="{{ base_dir }}blog/images/grid_0_scaled.png"/></a>
 </center>
-
+<br/>
+<p>You should now see a set of controls appear on the right side as shown in the image below. You can now proceed to draw a box over the region where you are interested in removing the grid. This is similar to drawing a mask in the automatic data extraction mode.</p>
+<br/>
 <center>
     <a href="{{ base_dir }}blog/images/grid_1.png" target="_blank"><img src="{{ base_dir }}blog/images/grid_1_scaled.png"/></a>
 </center>
-
+<br/>
+<p>You can now proceed to specifying the colors. By default the <b>Background Mode</b> option is selected with the color selection as white. This means that the algorithm will assume the background is white in color and the grid lines have a color that lies outside the numeric color distance value (the number next to the <b>Pick</b> button). As most plots have white background and dark grid lines, the default settings should work well. If you want, you can adjust these settings or switch to the foreground mode as needed. The Test button should help you decide if your settings are working well.</p>
+<br/>
 <center>
     <a href="{{ base_dir }}blog/images/grid_2.png" target="_blank"><img src="{{ base_dir }}blog/images/grid_2_scaled.png"/></a>
 </center>
+<br/>
 
+<p>Next, select the directions you want the grid removal tool to work in by clicking on the appropriate checkboxes. The X% and Y% values are two adjustable parameters that you can change to tweak the results. Usually, you will want to increase these numbers for solid grid lines and decrease for dotted or dashed lines. The default values should work well in most cases.</p>
+<br/>
 <center>
     <a href="{{ base_dir }}blog/images/grid_3.png" target="_blank"><img src="{{ base_dir }}blog/images/grid_3_scaled.png"/></a>
 </center>
+<br/>
+<p>For more details, refer to the updated <a href="http://arohatgi.info/WebPlotDigitizer/userManual.pdf">user manual</a>.</p>
+<br/>
+<p>In addition to the grid removal tool, there is support for log-scale radial direction in polar plots. Also the cubic spline interpolation for the "X step with interpolation" algorithm has been reimplemented for better performance and stability. In the process, the dependence on <a href="http://www.numericjs.com/" target="_blank">numeric.js</a> has been completely removed.</p>
+<br/>
