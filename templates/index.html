@@ -1,16 +1,44 @@
 {% extends "_base.html" %}
 {% block content %}
-<h2>About Me</h2>
-<p>I have studied Chemical Engineering at the <a href="http://www.iitk.ac.in">Indian Institute of Technology, Kanpur</a> and obtained my PhD in Chemical Engineering from the <a href="http://www.nd.edu">University of Notre Dame</a> in 2012.</p>
-<br/>
-<p>For graduate research, I studied <a href="http://etd.nd.edu/ETD-db/theses/available/etd-07172012-141644/unrestricted/RohatgiA072012D.pdf">particle and fluid interaction mechanisms in mutiphase flows</a>. This involved theoretical, computational and experimental work ranging from developing parallel processing particle tracking codes to fabricating simple microfluidic devices.</p>
-<br/>
-<p>Besides engineering, I also <a href="http://www.github.com/ankitrohatgi">enjoy computer programming</a> and am familiar with many popular cloud computing technologies, GUI toolkits, operating systems and many programming languages. I am also the author of <a href="http://arohatgi.info/WebPlotDigitizer">WebPlotDigitizer</a> which is a popular tool for extracting numerical data from images of plots, maps, microscope images etc.</p>
-<br/>
-<p>I am currently working at <a href="http://www.ansys.com">ANSYS, Inc.</a> developing Finite Element Method based engineering simulation software such as <a href="http://www.ansys.com/Products/Simulation+Technology/Structural+Analysis/ANSYS+Mechanical/">ANSYS Mechanical</a> and <a href="http://www.ansys.com/Products/Workflow+Technology/ANSYS+Workbench+Platform/">Workbench</a>.</p>
-<br/>
-<p>I am currently located in <a href="http://www.youtube.com/playlist?list=PLXilw7cmfCN3j3JG7Wb3lRm51jGTZbUWm">Austin, Texas</a>.</p>
-<hr/>
-<p>This website links to some of my opensourced projects, PhD work, photography work and a blog. If you would like to contact me, then feel free to email me at ankitrohatgi@hotmail.com</p>
-<br/>
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-9">
+            <h1>Ankit Rohatgi</h1>
+            <p>Senior Software Developer, <a href="http://www.ansys.com">ANSYS Inc.</a></p>
+            <p>Ph.D. Chemical Engineering, University of Notre Dame</p>
+            <p>B.Tech. Chemical Engineering, Indian Institute of Technology Kanpur</p>
+        </div>
+        <div class="col-md-3">
+            <img src="images/profile_picture.jpg" class="img-rounded img-responsive"/>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        <div class="panel panel-default">
+            <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span> <b>Connect</b></span></div>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="http://www.linkedin.com/in/rohatgi">LinkedIn</a></li>
+                <li class="list-group-item"><a href="https://twitter.com/ankit_rohatgi">Twitter</a></li>
+                <li class="list-group-item"><a href="mailto:ankitrohatgi@hotmail.com">E-Mail</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="panel panel-default">
+            <div class="panel-heading"><span class="glyphicon glyphicon-link"></span> <b>Links</b></div>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="http://arohatgi.info/WebPlotDigitizer">WebPlotDigitizer</a> - My web based software to extract numerical data from scientific images.</li>
+                    <li class="list-group-item"><a href="http://github.com/ankitrohatgi/digitizeR">digitizeR</a> - R package that hosts WebPlotDigitizer locally (Under development).</li>
+                    <li class="list-group-item"><a href="http://github.com/ankitrohatgi">GitHub</a> - A small collection of my opensource codes.</li>
+                    <li class="list-group-item"><a href="https://www.flickr.com/photos/ankitrohatgi/">Flickr</a> - Hobby photography.</li>
+                    <li class="list-group-item"><a href="http://etd.nd.edu/ETD-db/theses/available/etd-07172012-141644/unrestricted/RohatgiA072012D.pdf">Ph.D. Thesis</a> - My Ph.D. thesis on Shear-Induced Diffusion in Dilute Suspensions.</li>
+            </ul>
+        
+        </div>
+
+    </div>
+</div>
+
 {% endblock %}
