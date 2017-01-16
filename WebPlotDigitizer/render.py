@@ -63,7 +63,7 @@ class Blog:
             else:
                 fileName = self.outputDir + 'page' + str(pagei) + '.html'
             page_file = open(fileName, 'w')
-            page_file.write(pageHtml)
+            page_file.write(pageHtml.encode("utf8"))
             page_file.close()
 
 
@@ -78,7 +78,7 @@ class Blog:
             blogPost.getContent(env, self.baseLocationRelativeToPost)
             pageHtml = template.render(post=blogPost, base_dir=self.baseLocationRelativeToPost)
             post_file = open(self.outputDir + 'posts/' + blogPost.fileName, 'w')
-            post_file.write(pageHtml)
+            post_file.write(pageHtml.encode("utf8"))
             post_file.close()
             blogPost.clearContent()
 
@@ -130,7 +130,7 @@ class Website:
         pageTemplate = self.env.get_template(filename)
         page = pageTemplate.render()
         pageFile = open(filename, 'w')
-        pageFile.write(page)
+        pageFile.write(page.encode("utf8"))
         pageFile.close()
 
     def renderSimplePages(self):
