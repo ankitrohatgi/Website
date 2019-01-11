@@ -21,7 +21,7 @@ class Blog:
         self.baseLocationRelativeToPage = "../"
     
     def fetchInfo(self):
-        with open(self.postDatabase, "rb") as fh:
+        with open(self.postDatabase, "rt") as fh:
             reader = csv.reader(fh, quotechar='"')
             for row in reader:
                 if len(row) == 3:
@@ -39,7 +39,7 @@ class Blog:
         postCount = len(self.posts)
         pageCount = self.getPageCount()
         for pagei in range(1, pageCount+1):
-            print 'Rendering page:', pagei, 'of', pageCount
+            print('Rendering page:', pagei, 'of', pageCount)
             
             postStartIndex = (pagei-1)*self.postsPerPage
             postEndIndex = postStartIndex + self.postsPerPage - 1
@@ -71,7 +71,7 @@ class Blog:
         if len(self.posts) == 0:
             return
         for blogPost in self.posts:
-            print 'Rendering post:', blogPost.title
+            print('Rendering post:', blogPost.title)
             template = env.get_template(self.postTemplateFile)
             convDate = time.strptime(blogPost.date, "%B %d, %Y")
             blogPost.rssDate = time.strftime("%a, %d %b %Y %H:%M:%S +0000", convDate)
@@ -126,7 +126,7 @@ class Website:
         self.env = Environment(loader=FileSystemLoader('templates'))
         
     def renderPage(self, filename):
-        print "Rendering:", filename
+        print("Rendering:", filename)
         pageTemplate = self.env.get_template(filename)
         page = pageTemplate.render()
         pageFile = open(filename, 'w')
